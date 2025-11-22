@@ -1,0 +1,15 @@
+# Core AI / RAG
+langchain==0.3.7
+langchain-community==0.3.7
+langchain-core==0.3.17
+langchain-openai==0.2.8
+langgraph==0.2.33
+
+# Vector Store
+
+# Vector Store
+faiss-cpu>=1.13.0
+
+
+# Streamlit UI
+streamlit==1.25.0
