@@ -3,7 +3,7 @@ import numpy as np
 import os
 import pickle
 from core.embed import get_embedding
-from core.search import search_web
+
 
 FAISS_PATH = "faiss_index.index"
 TEXTS_PATH = "faiss_texts.pkl"
@@ -60,13 +60,6 @@ def retrieve_from_faiss(query: str, top_k=3):
     results = [stored_texts[i] for i in indices[0] if i < len(stored_texts)]
     return results, distances
 
-
-
-def store_and_return_tivaly(query): 
-    """ Search the web via Tivaly, store results in FAISS, and return the content. """
-    result = search_web(query, num_results=3) 
-    store_in_faiss(result) 
-    return result
 
 
 #  Testing 

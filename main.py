@@ -24,9 +24,17 @@ retrieval_agent = initialize_agent(
     verbose=True
 )
 
-# --- Run queries ---
+# --- Interactive loop ---
 if __name__ == "__main__":
-    query = "Who is the CEO of OpenAI?"
-    answer = retrieval_agent.run(query)
-    print("\n--- Final Answer ---")
-    print(answer)
+    print("Type 'quit' to exit.")
+    while True:
+        query = input("\nEnter your query: ")
+        if query.lower() in ("quit", "exit"):
+            print("Exiting…")
+            break
+        try:
+            answer = retrieval_agent.run(query)
+            print("\n--- Final Answer ---")
+            print(answer)
+        except Exception as e:
+            print(f"Error: {e}")
